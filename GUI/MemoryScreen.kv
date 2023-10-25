@@ -1,0 +1,40 @@
+<MemoryScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+    Image: 
+        source: 'recursos/Logo_MemoryGame.png'
+        size: (120, 120)
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.9}
+    
+    Label:
+        id: Memoriza_la_frase
+        text: 'Memoriza la frase'
+        font_size: sp(20)
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.7}
+
+    Label: 
+        id: random_string_label
+        text: root.random_string_label
+        font_size: '26sp'
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.5}
+
+    Label:
+        id: timer_label
+        text: root.timer_label
+        font_size: '20sp'
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.3}
+
+    Button:
+        text: 'Elige otro nivel de difucltad'
+        size_hint: None, None
+        size: "200dp", "50dp"
+        font_size: sp(16)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        on_release: 
+            app.root.current = 'principal'

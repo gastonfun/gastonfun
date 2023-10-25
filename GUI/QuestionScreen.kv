@@ -1,0 +1,33 @@
+<QuestionScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+    Image: 
+        source: 'recursos/Logo_MemoryGame2.png'
+        size: (120, 120)
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+    Label:
+        id: responde
+        text: "Ingresa la frase memorizada"
+
+
+    TextInput:
+        id: user_input
+        multiline: False
+        size_hint: None, None
+        size: "200dp", "50dp"
+        font_size: '26sp'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        hin_text: 'Escribe la frase'
+
+    Button:
+        text: 'Comprobar respuesta'
+        size_hint: None, None
+        size: "200dp", "50dp"
+        font_size: sp(20)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        on_release: root.guardar_texto()
+

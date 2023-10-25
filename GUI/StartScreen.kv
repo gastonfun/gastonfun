@@ -1,0 +1,36 @@
+<StartScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+    Image: 
+        source: 'recursos/Logo_MemoryGame.png'
+        size: (120, 120)
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.9}
+   
+    Label:
+        text: 'Selecciona la dificultad:'
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5, 'top': 0.6}
+    
+    # Selector desplegable de dificultad mediante boton
+    Spinner:
+        id: difficulty_spinner
+        text: 'Seleccionar'
+        values: ['Facil', 'Medio', 'Dificil']
+        on_text: root.on_difficulty_selected(self.text)
+        size_hint: None, None
+        size: (200, 44)
+        font_size: sp(20)
+        pos_hint: {'center_x': 0.5, 'top': 0.5}
+
+    Button:
+        text: 'Iniciar'
+        size_hint: None, None
+        size: (200, 44)
+        font_size: sp(20)
+        pos_hint: {'center_x': 0.5, 'top': 0.1}
+        on_press: root.manager.get_screen('memoriza').generar_cadena_alfanumerica()
+        on_release:
+            root.manager.current = 'memoriza'

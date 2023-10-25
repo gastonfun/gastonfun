@@ -1,0 +1,29 @@
+<ResultScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            id: result_label
+            text: root.result # Llamo a la variable de la función para obtener el resultado
+            multiline: False
+            size_hint: None, None
+            size: "200dp", "50dp"
+            font_size: '26sp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Inicio'
+            size_hint: None, None
+            size: (160, 44)
+            pos_hint: {'center_x': 0.1, 'top': 0.2}
+            font_size: sp(20)
+            on_release: root.manager.current = 'principal'
+        Button:
+            text: 'Reintentar'
+            size_hint: None, None
+            size: (160, 44)
+            pos_hint: {'center_x': 0.4, 'top': 0.2}
+            font_size: sp(20)
+            on_release: root.manager.current = 'memoriza'
